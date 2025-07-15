@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Ideas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>💡 Product Ideas</h1>
+        
+        <div class="input-section">
+            <input type="text" id="ideaTitle" placeholder="Product idea title..." maxlength="100">
+            <textarea id="ideaDescription" placeholder="Describe your idea..." rows="3"></textarea>
+            <input type="text" id="ideaRequester" placeholder="Who wants this? (e.g., customers, team, stakeholders)" maxlength="100">
+            <select id="ideaPriority">
+                <option value="low">Low Priority</option>
+                <option value="medium" selected>Medium Priority</option>
+                <option value="high">High Priority</option>
+            </select>
+            <button id="addBtn">Add Idea</button>
+        </div>
+        
+        <div class="tab-section">
+            <button class="tab-btn active" data-tab="active">📋 Active Ideas</button>
+            <button class="tab-btn" data-tab="done">✅ Done</button>
+        </div>
+        
+        <div class="filter-section">
+            <div class="filter-group">
+                <span class="filter-label">Filter:</span>
+                <button class="filter-btn active" data-filter="all">All Ideas</button>
+                <button class="filter-btn" data-filter="high">High Priority</button>
+                <button class="filter-btn" data-filter="medium">Medium Priority</button>
+                <button class="filter-btn" data-filter="low">Low Priority</button>
+            </div>
+            <div class="sort-group">
+                <span class="filter-label">Sort by:</span>
+                <button class="sort-btn active" data-sort="newest">Newest</button>
+                <button class="sort-btn" data-sort="votes">Most Votes</button>
+            </div>
+        </div>
+        
+        <div id="ideasList" class="ideas-list"></div>
+        
+        <div class="stats">
+            <span id="ideaCount">0 ideas captured</span>
+            <div class="stats-actions">
+                <button id="generateBtn">🚀 Generate Ideas</button>
+                <button id="exportBtn">Export Ideas</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
